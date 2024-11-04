@@ -1,0 +1,24 @@
+{
+  "kind": "Datasource",
+  "metadata": {
+    "name": "prometheusdemo",
+    "createdAt": "2024-10-31T07:09:02.890408Z",
+    "updatedAt": "2024-11-04T09:04:29.162793Z",
+    "version": 26,
+    "project": "perses"
+  },
+  "spec": {
+    "default": true,
+    "plugin": {
+      "kind": "PrometheusDatasource",
+      "spec": {
+        "proxy": {
+          "kind": "HTTPProxy",
+          "spec": {
+            "url": "http://prometheus-operated.kube-monitoring.svc.cluster.local:9090"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "kind": "Project",
+  "metadata": {
+    "name": "perses",
+    "createdAt": "2024-10-31T07:09:02.872056Z",
+    "updatedAt": "2024-11-04T09:04:29.150307Z",
+    "version": 26
+  },
+  "spec": { "display": { "name": "perses" } }
+}
