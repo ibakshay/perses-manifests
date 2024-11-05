@@ -572,22 +572,6 @@
       }
     ],
     "duration": "12h",
-    "refreshInterval": "0s",
-    "datasources": {
-      "prometheusdemo": {
-        "default": true,
-        "plugin": {
-          "kind": "PrometheusDatasource",
-          "spec": {
-            "proxy": {
-              "kind": "HTTPProxy",
-              "spec": {
-                "url": "http://prometheus-operated.kube-monitoring.svc.cluster.local:9090"
-              }
-            }
-          }
-        }
-      }
-    }
+    "refreshInterval": "0s"
   }
 }
