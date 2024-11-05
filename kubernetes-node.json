@@ -3,8 +3,8 @@
   "metadata": {
     "name": "6f227e1ek",
     "createdAt": "2024-11-04T18:07:24.812661249Z",
-    "updatedAt": "2024-11-04T18:45:39.736152244Z",
-    "version": 4,
+    "updatedAt": "2024-11-05T12:18:14.84589058Z",
+    "version": 15,
     "project": "perses"
   },
   "spec": {
@@ -130,8 +130,8 @@
                     "value": 50
                   },
                   {
-                    "value": 80,
-                    "color": "#ff0000"
+                    "color": "#ff0000",
+                    "value": 80
                   }
                 ]
               }
@@ -235,8 +235,8 @@
                     "value": 0.8
                   },
                   {
-                    "value": 0.9,
-                    "color": "#ff4a4a"
+                    "color": "#ff4a4a",
+                    "value": 0.9
                   }
                 ]
               }
@@ -267,9 +267,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "stack": "all",
+                "areaOpacity": 0.3
               }
             }
           },
@@ -334,12 +337,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {
-                "stack": "all",
-                "areaOpacity": 0.3
-              },
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "areaOpacity": 0.3,
+                "stack": "all"
               }
             }
           },
@@ -379,8 +382,8 @@
                     "value": 0.8
                   },
                   {
-                    "value": 0.9,
-                    "color": "#ff4a4a"
+                    "color": "#ff4a4a",
+                    "value": 0.9
                   }
                 ]
               }
@@ -411,12 +414,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {
-                "stack": "all",
-                "areaOpacity": 0.3
-              },
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "areaOpacity": 0.3,
+                "stack": "all"
               }
             }
           },
@@ -445,12 +448,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {
-                "stack": "all",
-                "areaOpacity": 0.3
-              },
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "areaOpacity": 0.3,
+                "stack": "all"
               }
             }
           },
@@ -480,12 +483,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
+              "legend": {
+                "position": "bottom"
+              },
               "visual": {
                 "areaOpacity": 0.3,
                 "connectNulls": false
-              },
-              "legend": {
-                "position": "bottom"
               }
             }
           },
@@ -526,13 +529,13 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {
-                "display": "line",
-                "stack": "all",
-                "areaOpacity": 0.3
-              },
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "areaOpacity": 0.3,
+                "display": "line",
+                "stack": "all"
               }
             }
           },
@@ -597,9 +600,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "areaOpacity": 0.3,
+                "stack": "all"
               }
             }
           },
@@ -628,10 +634,10 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
-              }
+              },
+              "visual": {}
             }
           },
           "queries": [
@@ -660,9 +666,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "areaOpacity": 0.3,
+                "stack": "all"
               }
             }
           },
@@ -851,10 +860,31 @@
         "kind": "ListVariable",
         "spec": {
           "display": {
+            "name": "Prometheus Instance",
+            "hidden": false
+          },
+          "defaultValue": "kube-monitoring-obs-eu-de-1-prometheus",
+          "allowAllValue": false,
+          "allowMultiple": false,
+          "sort": "alphabetical-asc",
+          "plugin": {
+            "kind": "PrometheusLabelValuesVariable",
+            "spec": {
+              "labelName": "job",
+              "matchers": ["prometheus_build_info"]
+            }
+          },
+          "name": "prometheus-instance"
+        }
+      },
+      {
+        "kind": "ListVariable",
+        "spec": {
+          "display": {
             "name": "Node",
             "hidden": false
           },
-          "defaultValue": "shoot--greenhouse--obs-eu-de-1-worker-o4x4e-z1-5665c-kj22d",
+          "defaultValue": "shoot--greenhouse--obs-eu-de-1-worker-o4x4e-z1-5665c-vkwhf",
           "allowAllValue": false,
           "allowMultiple": false,
           "sort": "alphabetical-asc",
