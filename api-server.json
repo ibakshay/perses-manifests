@@ -2,6 +2,9 @@
   "kind": "Dashboard",
   "metadata": {
     "name": "apiserver",
+    "createdAt": "2024-11-04T10:32:39.244912767Z",
+    "updatedAt": "2024-11-05T11:56:29.673080667Z",
+    "version": 16,
     "project": "perses"
   },
   "spec": {
@@ -47,8 +50,7 @@
                 }
               }
             }
-          ],
-          "links": []
+          ]
         }
       },
       "1": {
@@ -60,9 +62,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "areaOpacity": 0.3,
+                "stack": "all"
               }
             }
           },
@@ -92,9 +97,13 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "areaOpacity": 0.3,
+                "connectNulls": false,
+                "stack": "all"
               }
             }
           },
@@ -124,14 +133,17 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
+              "legend": {
+                "position": "bottom"
+              },
+              "visual": {
+                "stack": "all",
+                "areaOpacity": 0.3
+              },
               "yAxis": {
                 "format": {
                   "unit": "milliseconds"
                 }
-              },
-              "legend": {
-                "position": "bottom"
               }
             }
           },
@@ -161,9 +173,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "stack": "all",
+                "areaOpacity": 0.3
               }
             }
           },
@@ -193,16 +208,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "legend": {
-                "mode": "list",
-                "position": "bottom",
-                "values": []
-              },
               "visual": {
                 "areaOpacity": 0.25,
                 "connectNulls": true,
                 "display": "line",
-                "lineWidth": 2
+                "lineWidth": 2,
+                "stack": "all"
               }
             }
           },
@@ -474,14 +485,14 @@
               "x": 0,
               "y": 21,
               "width": 24,
-              "height": 8,
+              "height": 10,
               "content": {
                 "$ref": "#/spec/panels/4"
               }
             },
             {
               "x": 0,
-              "y": 29,
+              "y": 31,
               "width": 12,
               "height": 8,
               "content": {
@@ -490,7 +501,7 @@
             },
             {
               "x": 12,
-              "y": 29,
+              "y": 31,
               "width": 12,
               "height": 8,
               "content": {
@@ -499,7 +510,7 @@
             },
             {
               "x": 0,
-              "y": 37,
+              "y": 39,
               "width": 12,
               "height": 8,
               "content": {
@@ -508,7 +519,7 @@
             },
             {
               "x": 12,
-              "y": 37,
+              "y": 39,
               "width": 12,
               "height": 8,
               "content": {
@@ -517,7 +528,7 @@
             },
             {
               "x": 0,
-              "y": 45,
+              "y": 47,
               "width": 12,
               "height": 8,
               "content": {
@@ -526,7 +537,7 @@
             },
             {
               "x": 12,
-              "y": 45,
+              "y": 47,
               "width": 12,
               "height": 8,
               "content": {
@@ -539,11 +550,24 @@
     ],
     "variables": [
       {
-        "kind": "TextVariable",
+        "kind": "ListVariable",
         "spec": {
-          "value": "kube-monitoring-prometheus",
-          "constant": true,
-          "name": "prometheus"
+          "display": {
+            "name": "Prometheus Instance",
+            "hidden": false
+          },
+          "defaultValue": "kube-monitoring-obs-eu-de-1-prometheus",
+          "allowAllValue": false,
+          "allowMultiple": false,
+          "sort": "alphabetical-asc",
+          "plugin": {
+            "kind": "PrometheusLabelValuesVariable",
+            "spec": {
+              "labelName": "job",
+              "matchers": ["prometheus_build_info"]
+            }
+          },
+          "name": "prometheus-instance"
         }
       }
     ],
