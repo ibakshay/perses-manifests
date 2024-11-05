@@ -3,8 +3,8 @@
   "metadata": {
     "name": "kubernetes-container-resources",
     "createdAt": "2024-11-04T17:27:51.659117586Z",
-    "updatedAt": "2024-11-04T17:49:22.192523502Z",
-    "version": 6,
+    "updatedAt": "2024-11-04T18:02:59.271751565Z",
+    "version": 13,
     "project": "perses"
   },
   "spec": {
@@ -123,6 +123,9 @@
             "kind": "GaugeChart",
             "spec": {
               "calculation": "mean",
+              "format": {
+                "unit": "decimal"
+              },
               "max": 137438953472,
               "thresholds": {
                 "steps": [
@@ -139,9 +142,6 @@
                     "value": 10000000000
                   }
                 ]
-              },
-              "format": {
-                "unit": "decimal"
               }
             }
           },
@@ -173,6 +173,9 @@
             "kind": "GaugeChart",
             "spec": {
               "calculation": "mean",
+              "format": {
+                "unit": "decimal"
+              },
               "max": 137438953472,
               "thresholds": {
                 "steps": [
@@ -189,9 +192,6 @@
                     "value": 10000000000
                   }
                 ]
-              },
-              "format": {
-                "unit": "decimal"
               }
             }
           },
@@ -422,9 +422,13 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "connectNulls": false,
+                "stack": "all",
+                "areaOpacity": 0.3
               }
             }
           },
@@ -468,9 +472,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "stack": "all",
+                "areaOpacity": 0.3
               }
             }
           },
@@ -514,9 +521,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "stack": "all",
+                "areaOpacity": 0.3
               }
             }
           },
@@ -547,9 +557,12 @@
           "plugin": {
             "kind": "TimeSeriesChart",
             "spec": {
-              "visual": {},
               "legend": {
                 "position": "bottom"
+              },
+              "visual": {
+                "stack": "all",
+                "areaOpacity": 0.3
               }
             }
           },
@@ -597,19 +610,19 @@
               "format": {
                 "unit": "bytes"
               },
+              "max": 137438953472,
               "thresholds": {
                 "steps": [
                   {
-                    "value": 1000000000,
-                    "color": "#00baff"
+                    "color": "#00baff",
+                    "value": 1000000000
                   },
                   {
-                    "value": 10000000000,
-                    "color": "#4aa7ff"
+                    "color": "#4aa7ff",
+                    "value": 10000000000
                   }
                 ]
-              },
-              "max": 137438953472
+              }
             }
           },
           "queries": [
