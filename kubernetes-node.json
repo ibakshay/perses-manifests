@@ -1,11 +1,11 @@
 {
   "kind": "Dashboard",
   "metadata": {
-    "name": "6f227e1ek",
-    "createdAt": "2024-11-04T18:07:24.812661249Z",
-    "updatedAt": "2024-11-05T12:18:14.84589058Z",
-    "version": 15,
-    "project": "perses"
+    "name": "kubernetes-node",
+    "createdAt": "2024-11-06T17:47:07.592927146Z",
+    "updatedAt": "2024-11-06T17:50:47.635609883Z",
+    "version": 22,
+    "project": "default"
   },
   "spec": {
     "display": {
@@ -227,16 +227,16 @@
             "spec": {
               "calculation": "last-number",
               "format": {
-                "unit": "percent-decimal"
+                "unit": "percent"
               },
               "thresholds": {
                 "steps": [
                   {
-                    "value": 0.8
+                    "value": 50
                   },
                   {
                     "color": "#ff4a4a",
-                    "value": 0.9
+                    "value": 80
                   }
                 ]
               }
@@ -271,8 +271,8 @@
                 "position": "bottom"
               },
               "visual": {
-                "stack": "all",
-                "areaOpacity": 0.3
+                "areaOpacity": 0.3,
+                "stack": "all"
               }
             }
           },
@@ -884,7 +884,7 @@
             "name": "Node",
             "hidden": false
           },
-          "defaultValue": "shoot--greenhouse--obs-eu-de-1-worker-o4x4e-z1-5665c-vkwhf",
+          "defaultValue": "shoot--greenhouse--obs-eu-de-1-worker-o4x4e-z1-5665c-kj22d",
           "allowAllValue": false,
           "allowMultiple": false,
           "sort": "alphabetical-asc",

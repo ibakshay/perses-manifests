@@ -15,7 +15,7 @@
         "proxy": {
           "kind": "HTTPProxy",
           "spec": {
-            "url": "http://prometheus-operated.kube-monitoring.svc.cluster.local:9090"
+            "url": "http://kube-monitoring-obs-eu-de-1-prometheus.kube-monitoring.svc.cluster.local:9090"
           }
         }
       }

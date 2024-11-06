@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: perses-project
+  labels:
+    perses-resource: "true"
+data:
+  project.json: |
+    {
+      "kind": "Project",
+      "metadata": {
+        "name": "default",
+      },
+      "spec": { "display": { "name": "default" } }
+    }

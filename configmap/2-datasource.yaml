@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: perses-datasource
+  labels:
+    perses-resource: "true"
+data:
+  datasource.json: |
+    {
+      "kind": "Datasource",
+      "metadata": {
+        "name": "kube-monitoring",
+        "project": "default"
+      },
+      "spec": {
+        "default": true,
+        "plugin": {
+          "kind": "PrometheusDatasource",
+          "spec": {
+            "proxy": {
+              "kind": "HTTPProxy",
+              "spec": {
+                "url": "http://kube-monitoring-obs-eu-de-1-prometheus.kube-monitoring.svc.cluster.local:9090"
+              }
+            }
+          }
+        }
+      }
+    }
