@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: perses-core-dns-dashboard
   labels:
-    perses-resource: "true"
+    perses.dev/resource: "true"
 data:
   core-dns-dashboard.json: |
     {

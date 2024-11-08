@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: perses-kubernetes-container-resources
   labels:
-    perses-resource: "true"
+    perses.dev/resource: "true"
 data:
   kubernetes-container-resources.json: |
     {

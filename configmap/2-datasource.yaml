@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: perses-datasource
   labels:
-    perses-resource: "true"
+    perses.dev/resource: "true"
 data:
   datasource.json: |
     {

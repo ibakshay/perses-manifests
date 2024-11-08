@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: perses-api-server-dashboard
   labels:
-    perses-resource: "true"
+    perses.dev/resource: "true"
 data:
   api-server-dashboard.json: |
     {
